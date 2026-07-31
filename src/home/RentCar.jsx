@@ -1,105 +1,87 @@
 import { motion } from "framer-motion";
-import { Fuel, Gauge, Users, ArrowRight } from "lucide-react";
-import car from "../assets/images/car1.jpg";
+import { Fuel, Gauge, Users, Snowflake } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
+import cars from "../data/cars";
+
 
 export default function RentCar() {
+  const navigate = useNavigate();
   return (
-    <section id="rent" className="py-24 bg-[#0b0b0b]">
-      <div className="max-w-7xl mx-auto px-6">
-
-        <motion.div
+    <section id="cars" className="bg-[#0b0b0b] py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-bold text-center text-white"
         >
-          <span className="text-orange-500 uppercase tracking-widest font-semibold">
-            Featured Vehicle
-          </span>
+          Our Available Cars for Now
+        </motion.h2>
 
-          <h2 className="text-5xl font-black mt-4">
-            Rent Your
-            <span className="text-orange-500"> Dream Car</span>
-          </h2>
+        <p className="text-gray-400 text-center mt-4 mb-16">
+          Premium vehicles for every journey.
+        </p>
 
-          <p className="text-gray-400 mt-6 max-w-2xl text-lg">
-            Enjoy luxury, comfort, and performance with our premium vehicle.
-            Easy booking, affordable pricing, and professional service.
-          </p>
-        </motion.div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {cars.map((car) => (
+            <motion.div
+              key={car.id}
+              whileHover={{ y: -10 }}
+              className="bg-[#151515] rounded-3xl overflow-hidden shadow-xl"
+            >
+              <img
+                src={car.image}
+                alt={car.name}
+                className="w-full h-60 object-cover"
+              />
 
-        <div className="grid lg:grid-cols-2 gap-12 mt-16 items-center">
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-white">{car.name}</h3>
 
-          {/* Car Image */}
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="overflow-hidden rounded-3xl border border-white/10"
-          >
-            <img
-              src={car}
-              alt="Luxury Car"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-
-          {/* Details */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-4xl font-bold">
-              Mercedes-Benz C-Class
-            </h3>
-
-            <p className="text-gray-400 mt-6 leading-8">
-              Experience the perfect combination of luxury, comfort,
-              and performance. Ideal for business trips, weddings,
-              vacations, and city travel.
-            </p>
-
-            <div className="grid grid-cols-3 gap-6 mt-10">
-
-              <div className="bg-[#111] rounded-2xl p-6 text-center">
-                <Fuel className="mx-auto text-orange-500" size={30} />
-                <p className="mt-3 text-gray-300">Petrol</p>
-              </div>
-
-              <div className="bg-[#111] rounded-2xl p-6 text-center">
-                <Gauge className="mx-auto text-orange-500" size={30} />
-                <p className="mt-3 text-gray-300">Automatic</p>
-              </div>
-
-              <div className="bg-[#111] rounded-2xl p-6 text-center">
-                <Users className="mx-auto text-orange-500" size={30} />
-                <p className="mt-3 text-gray-300">5 Seats</p>
-              </div>
-
-            </div>
-
-            <div className="flex flex-wrap justify-between items-center mt-12">
-
-              <div>
-                <p className="text-gray-400">Starting From</p>
-                <h2 className="text-5xl font-black text-orange-500">
-                  ₹4,999
-                  <span className="text-xl text-white"> / Day</span>
+                <h2 className="text-yellow-400 text-3xl font-bold mt-3">
+                  ₹{car.minprice.toLocaleString()} - ₹
+                  {car.maxprice.toLocaleString()}
+                  <span className="text-lg text-gray-300"> / Day</span>
                 </h2>
+
+                <div className="grid grid-cols-2 gap-4 mt-6 text-gray-300">
+                  <div className="flex items-center gap-2">
+                    <Fuel size={18} />
+                    {car.fuel}
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Gauge size={18} />
+                    {car.transmission}
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Users size={18} />
+                    {car.seats} Seats
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Snowflake size={18} />
+                    AC
+                  </div>
+                </div>
+
+                <p className="text-gray-400 mt-5">Mileage : {car.mileage}</p>
+
+                <button
+                  onClick={() =>
+                    navigate("/rent", {
+                      state: car,
+                    })
+                  }
+                  className="w-full mt-8 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold py-3 rounded-xl"
+                >
+                  Rent This Car
+                </button>
               </div>
-
-              <button className="mt-6 lg:mt-0 flex items-center gap-3 bg-orange-500 hover:bg-orange-600 duration-300 px-8 py-4 rounded-full font-semibold">
-
-                Rent Now
-
-                <ArrowRight size={20} />
-
-              </button>
-
-            </div>
-
-          </motion.div>
-
+            </motion.div>
+          ))}
         </div>
-
       </div>
     </section>
   );

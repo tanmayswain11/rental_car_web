@@ -1,25 +1,16 @@
-import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
+import { Routes, Route } from "react-router-dom";
 
-import Hero from "./home/Hero";
-import About from "./home/About";
-import WhyZibago from "./home/WhyZibago";
-import RentCar from "./home/RentCar";
-import Contact from "./home/Contact";
-import MapSection from "./home/MapSection";
+import Home from "./Pages/Home";
+import RentForm from "./Pages/RentForm";
+import Success from "./Pages/Success";
 
 function App() {
   return (
-    <div className="bg-[#080808] text-white">
-      <Navbar />
-      <Hero />
-      <About />
-      <WhyZibago />
-      <RentCar />
-      <Contact />
-      <MapSection />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/rent" element={<RentForm />} />
+      <Route path="/success" element={<Success />} />
+    </Routes>
   );
 }
 
