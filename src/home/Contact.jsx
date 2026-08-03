@@ -77,7 +77,7 @@ export default function Contact() {
                   Phone
                 </h3>
                 <p className="text-gray-400 mt-2">
-                  +91 98765 43210
+                  +91 7377747575
                 </p>
               </div>
 
@@ -94,7 +94,7 @@ export default function Contact() {
                   Email
                 </h3>
                 <p className="text-gray-400 mt-2">
-                  info@zibago.com
+                  zibago.drive@gmail.com
                 </p>
               </div>
 
@@ -112,7 +112,7 @@ export default function Contact() {
                 </h3>
 
                 <p className="text-gray-400 mt-2">
-                  Bhubaneswar, Odisha, India
+                  BDA Market Complex, F-21, K-7, Kalinganagar, Bhubaneswar, Odisha, 751029
                 </p>
 
               </div>

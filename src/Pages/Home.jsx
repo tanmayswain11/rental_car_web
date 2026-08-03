@@ -7,6 +7,9 @@ import WhyZibago from "../home/WhyZibago";
 import RentCar from "../home/RentCar";
 import Contact from "../home/Contact";
 import MapSection from "../home/MapSection";
+import MoreServices from "../home/MoreServices";
+import ChatBot from "../chatbot/ChatBot";
+import FloatingWhatsApp from "../chatbot/FloatingWhatsApp";
 
 function App() {
   return (
@@ -16,9 +19,12 @@ function App() {
       <About />
       <WhyZibago />
       <RentCar />
+      <MoreServices/>
       <Contact />
       <MapSection />
       <Footer />
+      <ChatBot/>
+      <FloatingWhatsApp/>
     </div>
   );
 }

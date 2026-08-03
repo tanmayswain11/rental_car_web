@@ -3,6 +3,8 @@ import {
   IndianRupee,
   Headphones,
   MapPinned,
+  UserCheck,
+  Handshake,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -28,6 +30,16 @@ const features = [
     title: "Flexible Pickup",
     desc: "Convenient pickup and drop-off locations.",
   },
+  {
+  icon: UserCheck,
+  title: "Experienced Drivers",
+  desc: "Travel with confidence through our licensed, experienced, and professional drivers. Available for local rides, airport transfers, outstation journeys, business travel, and special occasions to ensure a safe, comfortable, and hassle-free experience.",
+},
+{
+  icon: Handshake,
+  title: "Become a ZibaGo Partner",
+  desc: "Own a car? Partner with ZibaGo and earn passive income by renting your vehicle to verified customers. We handle bookings, customer support, and help maximize your earnings.",
+},
 ];
 
 export default function WhyZibago() {
@@ -63,7 +75,7 @@ export default function WhyZibago() {
 
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
 
           {features.map((item, index) => {
             const Icon = item.icon;

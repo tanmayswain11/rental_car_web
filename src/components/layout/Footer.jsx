@@ -98,7 +98,7 @@ export default function Footer() {
                 <Phone className="text-orange-500" />
 
                 <span className="text-gray-400">
-                  +91 98765 43210
+                  +91 7377747575
                 </span>
 
               </div>
@@ -108,7 +108,7 @@ export default function Footer() {
                 <Mail className="text-orange-500" />
 
                 <span className="text-gray-400">
-                  info@zibago.com
+                  zibago.drive@gmail.com
                 </span>
 
               </div>

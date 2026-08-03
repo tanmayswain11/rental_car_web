@@ -125,12 +125,11 @@
 //   );
 // }
 
-
-
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
 // import { CarFront } from "lucide-react";
+import API from "../api/bookingApi";
 
 export default function RentForm() {
   const { state } = useLocation();
@@ -152,20 +151,55 @@ export default function RentForm() {
     });
   }
 
-  function handleSubmit(e) {
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+
+  //   navigate("/success", {
+  //     state: {
+  //       car: state,
+  //       customer: form,
+  //     },
+  //   });
+  // }
+
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    navigate("/success", {
-      state: {
-        car: state,
-        customer: form,
-      },
-    });
+    try {
+      const bookingData = {
+        car: state.name,
+        minPrice: state.minprice,
+        maxPrice: state.maxprice,
+
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        location: form.location,
+        duration: form.duration,
+        licence: form.licence,
+      };
+
+      const response = await API.post("/booking", bookingData);
+
+      if (response.data.success) {
+        navigate("/success", {
+          state: {
+            car: state,
+            customer: form,
+          },
+        });
+      }
+    } catch (error) {
+      console.error(error);
+
+      alert(
+        error.response?.data?.message || "Booking Failed. Please try again.",
+      );
+    }
   }
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-black via-zinc-900 to-black flex justify-center items-center p-6">
-
       {/* Floating Background Circle 1 */}
       <motion.div
         animate={{
@@ -206,22 +240,6 @@ export default function RentForm() {
         className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full bg-white/5 blur-3xl -translate-x-1/2 -translate-y-1/2"
       />
 
-      {/* Floating Car Icon */}
-      {/* <motion.div
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 3, -3, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-        }}
-        className="absolute top-12 right-12 opacity-10"
-      >
-        <CarFront size={180} />
-      </motion.div> */}
-
-      {/* Booking Form */}
       <motion.form
         initial={{
           opacity: 0,
@@ -239,7 +257,6 @@ export default function RentForm() {
         onSubmit={handleSubmit}
         className="relative z-10 w-full max-w-xl bg-white/10 backdrop-blur-xl border border-white/10 shadow-2xl rounded-3xl p-8"
       >
-
         <motion.h2
           initial={{
             opacity: 0,
@@ -261,12 +278,12 @@ export default function RentForm() {
           Price :
           <span className="text-yellow-400 font-semibold">
             {" "}
-            ₹{state.minPrice?.toLocaleString()} - ₹{state.maxPrice?.toLocaleString()} / Day
+            ₹{state.minprice?.toLocaleString()} - ₹
+            {state.maxprice?.toLocaleString()} / Day
           </span>
         </p>
 
         <div className="space-y-5">
-
           <input
             type="text"
             name="name"
@@ -333,11 +350,8 @@ export default function RentForm() {
           >
             Submit Booking Request
           </motion.button>
-
         </div>
-
       </motion.form>
-
     </div>
   );
 }

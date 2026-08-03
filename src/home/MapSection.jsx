@@ -106,9 +106,9 @@ export default function MapSection() {
             </h3>
 
             <p className="text-gray-400 leading-8">
-              +91 XXXXX XXXXX
+              +91 7377747575
               <br />
-              support@zibago.in
+              zibago.drive@gmail.com
             </p>
           </motion.div>
 
