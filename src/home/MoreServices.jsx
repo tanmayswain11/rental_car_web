@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function MoreServices() {
   const navigate = useNavigate();
+  const phone = "917377747575";
+  const message =
+    "Hello ZibaGo, I Want a Professional and Experience Driver. Please assist me.";
   return (
     <section className="py-24 bg-black/60 backdrop-blur-md text-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -52,12 +55,20 @@ export default function MoreServices() {
               transfers and outstation travel.
             </p>
 
-            <a
+            {/* <a
               href="#contact"
               className="inline-block mt-8 bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-full font-semibold"
             >
               Contact Us
-            </a>
+            </a> */}
+            <a
+                  href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-8 bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-full font-semibold"
+                >
+                  Contact Us
+                </a>
           </motion.div>
 
           {/* Wedding */}

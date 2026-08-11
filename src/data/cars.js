@@ -6,6 +6,10 @@ import i10 from "../assets/images/cars/i10.jpeg"
 import scorpio from "../assets/images/cars/scorpio.jpeg"
 import swift from "../assets/images/cars/swift.jpeg"
 import venue from "../assets/images/cars/venue.jpeg"
+import creta from "../assets/images/cars/creta.jpg"
+import dzire from "../assets/images/cars/dzire.jpeg"
+import ertiga from "../assets/images/cars/ertiga.jpg"
+import thar from "../assets/images/cars/thar.jpg"
 
 const cars = [
   {
@@ -109,6 +113,55 @@ const cars = [
     transmission: "Manual",
     seats: 5,
     mileage: "18 km/l - 20 km/l",
+    ac: true,
+  },
+
+   {
+    id: 9,
+    name: "CRETA",
+    image: creta,
+    minprice:1799,
+    maxprice:5999,
+    fuel: "Diesel",
+    transmission: "Manual",
+    seats: 5,
+    mileage: "19.1 km/l - 21.8 km/l",
+    ac: true,
+  },
+   {
+    id: 10,
+    name: "DZIRE",
+    image: dzire,
+    minprice:1499,
+    maxprice:3499,
+    fuel: "Petrol",
+    transmission: "Manual",
+    seats: 5,
+    mileage: "24.79 km/l",
+    ac: true,
+  },
+   {
+    id: 11,
+    name: "ERTIGA",
+    image: ertiga,
+    minprice:1999,
+    maxprice:3999,
+    fuel: "Diesel",
+    transmission: "Manual",
+    seats: 7,
+    mileage: "24.20 km/l - 25.47 km/l",
+    ac: true,
+  },
+   {
+    id: 12,
+    name: "THAR",
+    image: thar,
+    minprice:2999,
+    maxprice:5999,
+    fuel: "Petrol",
+    transmission: "Manual",
+    seats: 5,
+    mileage: "8 km/l - 10 km/l",
     ac: true,
   },
 ];

@@ -4,7 +4,7 @@ import Footer from "../components/layout/Footer";
 import Hero from "../home/Hero";
 import About from "../home/About";
 import WhyZibago from "../home/WhyZibago";
-import RentCar from "../home/RentCar";
+// import RentCar from "./RentCar";
 import Contact from "../home/Contact";
 import MapSection from "../home/MapSection";
 import MoreServices from "../home/MoreServices";
@@ -18,7 +18,7 @@ function App() {
       <Hero />
       <About />
       <WhyZibago />
-      <RentCar />
+      {/* <RentCar /> */}
       <MoreServices/>
       <Contact />
       <MapSection />

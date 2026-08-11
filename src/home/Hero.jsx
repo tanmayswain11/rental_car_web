@@ -161,26 +161,26 @@ export default function Hero() {
   const location = useLocation();
   const videoRef = useRef(null);
 
-  const handleRentNow = () => {
-    // If already on the home page
-    if (location.pathname === "/") {
-      document.getElementById("cars")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-      return;
-    }
+  // const handleRentNow = () => {
+  //   // If already on the home page
+  //   if (location.pathname === "/") {
+  //     document.getElementById("cars")?.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //     return;
+  //   }
 
-    // If on another page (like /rent), go home then scroll
-    navigate("/");
+  //   // If on another page (like /rent), go home then scroll
+  //   navigate("/");
 
-    setTimeout(() => {
-      document.getElementById("cars")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 200);
-  };
+  //   setTimeout(() => {
+  //     document.getElementById("cars")?.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }, 200);
+  // };
 
   const handleVideoEnd = () => {
     if (videoRef.current) {
@@ -224,9 +224,18 @@ export default function Hero() {
 
           <div className="flex flex-wrap gap-5 mt-10">
             {/* Rent Now Button */}
-            <button
-              onClick={handleRentNow}
+            {/* <button
+              onClick={()=>navigate("/rent-cars")}
               className="flex items-center gap-3 bg-orange-500 hover:bg-orange-600 duration-300 px-8 py-4 rounded-full font-semibold"
+            >
+              Rent Now
+              <ArrowRight size={20} />
+            </button> */}
+
+            <button
+              type="button"
+              onClick={() => navigate("/rent-cars")}
+              className="relative z-20 flex items-center gap-3 bg-orange-500 hover:bg-orange-600 active:bg-orange-700 duration-300 px-8 py-4 rounded-full font-semibold cursor-pointer"
             >
               Rent Now
               <ArrowRight size={20} />
@@ -288,13 +297,24 @@ export default function Hero() {
             <source src={heroVideo} type="video/mp4" />
           </video> */}
 
-          <video
+          {/* <video
             ref={videoRef}
             autoPlay
             controls={true}
             playsInline
             onEnded={handleVideoEnd}
             className="w-full rounded-3xl object-cover shadow-[0_40px_80px_rgba(249,115,22,0.35)]"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video> */}
+
+          <video
+            ref={videoRef}
+            autoPlay
+            controls={true}
+            playsInline
+            onEnded={handleVideoEnd}
+            className="pointer-events-none w-full rounded-3xl object-cover shadow-[0_40px_80px_rgba(249,115,22,0.35)]"
           >
             <source src={heroVideo} type="video/mp4" />
           </video>

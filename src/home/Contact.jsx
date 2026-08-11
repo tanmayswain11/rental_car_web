@@ -127,11 +127,11 @@ export default function Contact() {
 
               <div className="mt-6 space-y-3 text-gray-400">
 
-                <p>Monday - Friday : 9:00 AM - 8:00 PM</p>
+                <p>Monday - Friday : 9:00 AM - 10:00 PM</p>
 
-                <p>Saturday : 9:00 AM - 6:00 PM</p>
+                <p>Saturday : 9:00 AM - 8:00 PM</p>
 
-                <p>Sunday : Closed</p>
+                <p>Sunday : 9:00 AM - 8:00 PM</p>
 
               </div>
 

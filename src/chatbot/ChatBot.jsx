@@ -165,7 +165,7 @@ export default function ChatBot() {
             </button>
           </div>
           <a
-            href={`https://wa.me/919876543210?text=${encodeURIComponent(
+            href={`https://wa.me/917377747575?text=${encodeURIComponent(
               "Hello ZibaGo, I want to rent a car.",
             )}`}
             target="_blank"

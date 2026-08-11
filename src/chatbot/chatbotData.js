@@ -108,9 +108,9 @@ Odisha`
     keywords: ["contact", "phone"],
     answer: `📞 Contact Us
 
-☎ +91 XXXXXXXXXX
+☎ +91 7377747575
 
-📧 support@zibago.com
+📧 zibago.drive@gmail.com
 
 💚 WhatsApp Available`
   },
