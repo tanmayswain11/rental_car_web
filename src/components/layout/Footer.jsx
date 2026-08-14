@@ -198,7 +198,7 @@ export default function Footer() {
               {/* Facebook */}
 
               <a
-                href="https://www.facebook.com/YOUR_FACEBOOK_USERNAME"
+                href="https://www.facebook.com/share/1DB8iyj1ma/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="ZibaGo Facebook"

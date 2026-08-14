@@ -78,7 +78,7 @@ export default function MoreServices() {
             className="relative bg-white/5 backdrop-blur-xl border border-orange-500/20 rounded-3xl p-8"
           >
             <span className="absolute top-5 right-5 bg-yellow-500 text-black px-4 py-1 rounded-full text-xs font-bold">
-              Coming Soon
+              Already Launch
             </span>
 
             <div className="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center mb-6">
@@ -94,7 +94,7 @@ export default function MoreServices() {
 
             <div className="flex items-center gap-2 mt-8 text-yellow-400 font-semibold">
               <Sparkles size={20} />
-              Launching Soon
+              Check on Rent Car
             </div>
           </motion.div>
 
