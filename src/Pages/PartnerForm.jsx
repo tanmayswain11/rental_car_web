@@ -256,6 +256,7 @@ import { useNavigate } from "react-router-dom";
 import partnerVideo from "../assets/videos/partner-bg.mp4";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import API from "../api/bookingApi"; 
 
 export default function PartnerForm() {
   const navigate = useNavigate();
@@ -284,22 +285,37 @@ export default function PartnerForm() {
     });
   }
 
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:5000/api/partner",
+  //       form,
+  //     );
+
+  //     if (response.data.success) {
+  //       navigate("/success");
+  //     }
+  //   } catch (err) {
+  //     alert("Unable to submit request.");
+  //   }
+  // }
+
   async function handleSubmit(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/api/partner",
-        form,
-      );
+  try {
+    const response = await API.post("/partner", form);
 
-      if (response.data.success) {
-        navigate("/success");
-      }
-    } catch (err) {
-      alert("Unable to submit request.");
+    if (response.data.success) {
+      navigate("/success");
     }
+  } catch (err) {
+    console.error("Partner submission error:", err);
+    alert("Unable to submit request.");
   }
+}
 
   const inputClass =
     "w-full bg-black/40 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-300 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/40 transition";
