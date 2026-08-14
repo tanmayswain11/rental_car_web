@@ -4,7 +4,7 @@ import Home from "./Pages/Home";
 import RentForm from "./Pages/RentForm";
 import Success from "./Pages/Success";
 import PartnerForm from "./Pages/PartnerForm";
-import RentCar from "./pages/RentCar";
+import RentCar from "./Pages/RentCar";
 
 function App() {
   return (
