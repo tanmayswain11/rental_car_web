@@ -148,7 +148,7 @@ export default function Footer() {
                 />
 
                 <span className="text-gray-400 group-hover:text-orange-500 transition duration-300">
-                  +91 7377747575
+                  +91 8117812565
                 </span>
               </a>
 

@@ -133,7 +133,7 @@ export default function Contact() {
                   href="tel:+917377747575"
                   className="text-gray-400 mt-2 inline-block hover:text-orange-400 transition"
                 >
-                  +91 7377747575
+                  +91 8117812565
                 </a>
               </div>
             </div>
